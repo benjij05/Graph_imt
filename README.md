@@ -19,6 +19,15 @@ Fonctionnalités :
 - syntax/
 - evaluation/
 
+### Développeurs syntax : Benjamin JACQUOT - Arthur KINDELBERGER
+développeurs :
+
+### Développeurs lexical : Jean TRELCAT - Nicolai DROBYSHEVSKI
+
+### Développeurs evaluation : Mathias KALISZ PEREIRA
+
+### Développeurs graphics : Léandre BONTINCK BOUCQUEY - Lucien PETIT MALTAVERNE - Rémi BERNARD
+
 ## Compilation
 ### Sous Windows
 gcc main.c syntax/syntax.c gestionGraphique.c evaluation/evaluateur.c lexical/lexical.c -o main -Iinclude -Llib -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf
