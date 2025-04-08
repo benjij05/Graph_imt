@@ -62,6 +62,12 @@ double evaluate_expression(Node *root, double x_value) {
                         return 0.0;
                     }
                     return log(arg);
+                case SQRT:
+                    if (arg >= 0) {
+                        return sqrt(arg);
+                    } else {
+                        printf("Erreur : racine d’un nombre négatif !\n");
+                }
                 default:
                     fprintf(stderr, "Erreur : fonction inconnue (%d)\n", (int)root->value);
                     return 0.0;
