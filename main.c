@@ -9,7 +9,7 @@
 #define pas 30 // ecart de pixel entre chaque graduation
 
 // use "gcc -o main *.c -Iinclude -Llib -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf"  to compile
-// under linux use "gcc -o main *.c -Iinclude $(sdl2-config --cflags --libs) -lSDL2_ttf -lm"
+// under linux use "gcc main.c syntax/syntax.c gestionGraphique.c evaluation/evaluateur.c lexical/lexical.c -o main  -Iinclude $(sdl2-config --cflags --libs) -lSDL2_ttf -lm"
 
 
 int ContientErreur(typejeton T[],SDL_Renderer *ren,SDL_Color red,TTF_Font *font2);
