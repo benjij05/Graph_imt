@@ -18,6 +18,7 @@ Fonctionnalités :
 - lexical/
 - syntax/
 - evaluation/
+- test/ : Pour tester lexical, syntax et evaluation (graphique est déjà tester de base)
 
 ### Développeurs syntax : Benjamin JACQUOT - Arthur KINDELBERGER
 développeurs :
