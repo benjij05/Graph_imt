@@ -52,6 +52,10 @@ void AfficherLexemes(typejeton T[]) {
                     case 1:
                     printf("Fonction inconnue\n");
                     break;
+
+                    case 2:
+                    printf("Nombre mal forme\n");
+                    break;    
                 }
                 break;
             default:
@@ -102,14 +106,31 @@ void AnalyseLex(typejeton T[], char str[]) {
             case 'X':
                 T[j].lexem = VARIABLE;
                 break;
-            default:
-                if (isdigit(str[i]) || str[i] == '.') { 
-                    T[j].lexem = REEL;
-                    T[j].valeur.reel = strtof(&str[i], NULL);
-                    while (isdigit(str[i]) || str[i] == '.') i++; 
-                    j++;
-                    continue;
-                }
+                default:
+    if (isdigit(str[i]) || str[i] == '.') {
+        int start = i;
+        int pointCount = 0;
+
+        while (isdigit(str[i]) || str[i] == '.') {
+            if (str[i] == '.') pointCount++;
+            i++;
+        }
+
+        if (pointCount > 1) {
+            T[j].lexem = ERREUR;
+            T[j].valeur.erreur = erreur102; // Nombre mal formé
+        } else {
+            char buffer[32];
+            int len = i - start;
+            strncpy(buffer, &str[start], len);
+            buffer[len] = '\0';
+            T[j].lexem = REEL;
+            T[j].valeur.reel = strtof(buffer, NULL);
+        }
+
+        j++;
+        continue;
+            }
                 if (isalpha(str[i])) {
                     char buffer[10];
                     int k = 0;
