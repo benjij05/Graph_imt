@@ -1,8 +1,7 @@
 #include "gestionGraphique.h"
-#include "lexical.h"
-#include "jeton.h"
-#include "syntax.h"
-#include "evaluateur.h"
+#include "lexical/lexical.h"
+#include "syntax/syntax.h"
+#include "evaluation/evaluateur.h"
 
 
 #define sizex 20 //nb de graduations de chaque coté de 0
@@ -10,6 +9,7 @@
 #define pas 30 // ecart de pixel entre chaque graduation
 
 // use "gcc -o main *.c -Iinclude -Llib -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf"  to compile
+// under linux use "gcc -o main *.c -Iinclude $(sdl2-config --cflags --libs) -lSDL2_ttf -lm"
 
 
 int ContientErreur(typejeton T[],SDL_Renderer *ren,SDL_Color red,TTF_Font *font2);
@@ -120,6 +120,9 @@ int ContientErreur(typejeton T[],SDL_Renderer *ren,SDL_Color red,TTF_Font *font2
             break;
             case 1:
             printText(120, 17, "Fonction Inconnue", 200, 15, font2, red, ren);                
+            break;
+            case 2:
+            printText(120, 17, "Nombre mal forme", 200, 15, font2, red, ren);                
             break;
             }
             

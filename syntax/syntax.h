@@ -1,7 +1,7 @@
 #ifndef SYNTAX_H
 #define SYNTAX_H
 
-#include "jeton.h"
+#include "../lexical/jeton.h"
 #include <stddef.h>
 /*------------------------------------------------
  *           AST Node Definition

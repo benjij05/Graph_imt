@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "syntax.h"
+
 #include "evaluateur.h"
 
 double evaluate_expression(Node *root, double x_value) {
